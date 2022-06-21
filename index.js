@@ -20,10 +20,26 @@ console.log("users: ", window.users);
 
 console.log("todos: ", window.todos);
 
-let person = prompt("Give me a letter")
+let promptedLetter = String(prompt("Which letter do you want to appear?"));
+console.log(promptedLetter)
 
 
+let usersName = users.filter(user => user.name.indexOf(promptedLetter) > -1)
+console.log(usersName);
 
-setTimeout(function () {
-    console.log('Hello!')
-}, 2000)
+
+function greeting(){
+
+    let count = 2000;
+
+    for(let user of usersName){
+        setTimeout(function (){console.log(`Hello, ${user.name}`)}, count);
+        count += 2000;
+    }
+}
+greeting();
+
+let userIDpromped = Number(prompt("Which user ID do you want to enter? (0-9)"))
+
+let inCompleted = todos.filter(todo => todo.userId === userIDpromped && todo.completed === false)
+console.log(inCompleted);
