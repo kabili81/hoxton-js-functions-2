@@ -20,7 +20,7 @@ console.log("users: ", window.users);
 
 console.log("todos: ", window.todos);
 
-let promptedLetter = String(prompt("Which letter do you want to appear?"));
+let promptedLetter = String(prompt("Enter a letter?"));
 console.log(promptedLetter)
 
 
